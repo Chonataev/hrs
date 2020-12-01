@@ -1,0 +1,52 @@
+
+.mainPage{
+   width: 88%;
+   padding-top:28vh;
+   margin: auto;
+   height: 200vh;}
+
+.form{
+   display: flex;
+   justify-content: center;
+}
+.form_item{
+   font-family: 'Roboto';
+   display: block;
+   margin: 0 8px;
+   border: none;
+   outline: none;
+   border-radius:5px;
+   box-shadow: 0 0 4px;
+   font-size: 18px;
+   color:#000;
+}
+.search{
+   padding: 20px;
+   display: block;
+   width: 400px;
+   height: 40px;
+   color:#000;
+   background-color: transparent;
+}
+.price{
+   padding: 10px;
+   width: 80px;
+   height: 40px;
+   color:#000;
+   background-color: transparent;
+}
+input::-webkit-input-placeholder {color:#000; }
+
+.submit{
+   background-color: #007bff;
+   width: 90px;
+   height: 40px;
+   cursor: pointer;
+}
+
+.home_type, .rooms{
+   background-color: transparent;
+}
+option{
+   color:#000;
+}

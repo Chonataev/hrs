@@ -1,0 +1,46 @@
+.cards{
+   display: flex;
+   flex-wrap: wrap;
+   margin-top: 2rem;
+   max-width: 88%;
+   margin: auto;
+}
+
+.card{
+   display: flex;
+   margin: 2rem auto;
+   justify-content: space-around;
+   width: 46%;
+   border: none;
+   border-radius: 3px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+   margin: 8px 12px;
+   padding: 10px;
+   max-height: 180px;
+}
+
+.answer{
+   text-align: center;
+ }
+ 
+.card-body{
+   margin: 0 20px;
+}
+
+p{
+   margin-bottom: 10px;
+}
+.card-title{
+   color:  #007bff;
+}
+.image{
+   width: 200px;
+}
+
+.card-location{
+   color: #ABACA5;
+}
+.description{
+   font-size: 14px;
+   color:  #B0D1E5 ;
+}

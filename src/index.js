@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './css/index.css';
+import './css/apartments.css'
+import './css/autentification.css'
+import './css/registrtion.css'
+import './css/main.css';
+import './css/navbar.css'
+import './css/createProduct.css'
+import './css/cards.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
