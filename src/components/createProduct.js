@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import {useHttp} from '../hooks/http.hook'
 import {AuthContext} from '../context/AuthContext'
+import '../css/createProduct.css'
 
    export const СreateProduct = () =>{
          const [modal, setModal] = useState(false)

@@ -1,9 +1,9 @@
 import React, {useState } from 'react'
+import { Link } from 'react-router-dom'
 import {useHttp} from '../hooks/http.hook'
 
 export const Main = () => {
    const [info, setInfo] = useState([])
-   const [modal, setModal] = useState(false,'')
    
    const request = useHttp()
    const [form,setForm] = useState({
@@ -26,14 +26,14 @@ export const Main = () => {
    return(
       <div className='mainPage'>
          <div className='form'>
-            <input className='search form_item' name='search' value={form.search} type="text" onChange={changeHandler} placeholder='Искать'/>
-            <select className='home_type form_item' name='type' value={form.type} onChange={changeHandler}>
+            <input className='form_item' name='search' value={form.search} type="text" onChange={changeHandler} placeholder='Искать'/>
+            <select className='form_item' name='type' value={form.type} onChange={changeHandler}>
                <option className='option' hidden disabled selected>Выберите тип жилья</option>
                <option  className='option'>Дом</option>
                <option  className='option'>Квартира</option>
                <option  className='option'>Офис</option>
             </select>
-            <select className='rooms form_item' onChange={changeHandler}  value={form.rooms} name='rooms'>
+            <select className='form_item' onChange={changeHandler}  value={form.rooms} name='rooms'>
                <option className='option' hidden disabled selected>Комнаты</option>
                <option  className='option'>1</option>
                <option  className='option'>2</option>
@@ -47,23 +47,18 @@ export const Main = () => {
          <div className='apartments'>
             <h1 className='a_title'>Категория Дома</h1>
          </div> 
-         {modal === true && (
-                  <div className='modal'>
-                     </div>)}
-      
          <div className='cards'>
             {info.map((inf) => {
                   return(
                      <div className='card'>
                         <div className='card-image item'>
-                           <img className='image' src={inf.image}></img>
+                           <img className='image' src={inf.image} alt=''></img>
                         </div>
-
                         <div className='card-body item'>
                            <p className='card-title'>район : {inf.district}</p>
                            <p className='card-location'>цена : {inf.price}</p>
                            <p className='description'>описание : {inf.descrip}</p>
-                           <button onClick={console.log(inf.id)}>Подробнее</button>
+                           <Link to={`/detail/${inf.id}`}>Открыть</Link>
                         </div>
                      </div>
                      )

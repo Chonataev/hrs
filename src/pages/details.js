@@ -1,40 +1,29 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import {useHttp} from '../hooks/http.hook'
-import {AuthContext} from '../context/AuthContext'
-import {LinkCard} from '../components/LinkCard'
+import {ProductCard} from '../components/productCard'
 
 export const DetailPage = () => {
-   let auth = useContext(AuthContext)
-   const getUserId = () =>{
-      let userId = auth.key
-      if(userId){
-         return userId
-      }
-      console.log(userId)
-   }
   const request = useHttp()
-  const [data, setData] = useState(null)
+  const [card, setCard] = useState([])
   const dataId = useParams().id
-   console.log(dataId)
-  const getLink = useCallback(async () => {
-    try {
-      const response = await request(`http://localhost/home_rent_system/show?q_search=${dataId}`, 'GET', null)
-      setData(response)
-    } catch (e) {}
-  }, [linkId, request])
 
-  useEffect(() => {
-    getLink()
-  }, [getLink])
+  const getData = useCallback( async () => 
+  {
+     try{
+      const response = await request(`http://localhost/home_rent_system/detail?q_search=${dataId}`, 'GET', null)
+      setCard(response)
+     }
+     catch (e){
+     }
+     },[request])
 
-  if (loading) {
-    return <Loader />
-  }
-
+     useEffect(() => {
+      getData()
+    }, [getData])
   return (
     <>
-      { !loading && link && <LinkCard link={link} /> }
+      {<ProductCard card={card}/> }
     </>
   )
 }

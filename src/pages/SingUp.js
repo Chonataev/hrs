@@ -16,7 +16,7 @@ export const  SingUp = () =>{
     const registerHandler = async () => {
       try {
         const data = await request('http://localhost/home_rent_system/reg', 'POST', {...form})
-        console.log(data.message)
+        alert('внимание',data.message)
       } catch (e) {}
     }
    

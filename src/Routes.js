@@ -6,6 +6,7 @@ import {Apartment} from './pages/Apartment'
 import {SingUp} from './pages/SingUp'
 import {Singin} from './pages/Singin'
 import {Office} from './pages/Office'
+import {DetailPage} from './pages/details'
 
 
 export const useRoutes = isAuthenticated =>{
@@ -26,6 +27,10 @@ export const useRoutes = isAuthenticated =>{
 
             <Route path="/office" exact>  
               <Office />
+            </Route>
+
+            <Route path="/detail/:id">
+              <DetailPage />
             </Route>
 
             <Redirect to="/" />
@@ -54,6 +59,12 @@ export const useRoutes = isAuthenticated =>{
           <Route path="/singin" exact>
             <Singin />
           </Route>
+          <Route path="/singin" exact>
+            <Singin />
+          </Route>
+          <Route path="/detail/:id">
+          <DetailPage />
+            </Route>
           <Redirect to="/singin" />
     </Switch>
  )

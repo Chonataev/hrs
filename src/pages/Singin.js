@@ -1,10 +1,10 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {useHttp} from '../hooks/http.hook'
 import {AuthContext} from '../context/AuthContext'
+
 export const Singin = () =>{
    const auth = useContext(AuthContext)
 
-   
    const request = useHttp()
 
    const [form, setForm] = useState({
@@ -15,6 +15,7 @@ export const Singin = () =>{
       try {
         const data = await request('http://localhost/home_rent_system/auth', 'POST', {...form})
         auth.login(data.hesh, data.user_id)
+        message(data.message)
       } catch (e) {}
     }
 

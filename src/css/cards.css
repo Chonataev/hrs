@@ -19,10 +19,31 @@
    max-height: 180px;
 }
 
+.detail_card{
+   display: flex;
+   margin: 2rem auto;
+   justify-content: space-around;
+   border: none;
+   border-radius: 3px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+   margin: 7vh 7vw;
+   padding: 10px;
+}
+.card_image{
+   width: 600px;
+   height: 400px;
+}
 .answer{
    text-align: center;
  }
  
+ .detail-title{
+    font-size: 24px;
+    padding-top: 2rem;}
+
+ .detail-location,.detail{
+    font-style: 21px;
+ }
 .card-body{
    margin: 0 20px;
 }

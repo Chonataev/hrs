@@ -5,8 +5,7 @@ export const useHttp = () =>{
       try {
         if (body) {
           body = JSON.stringify(body)
-          headers['Content-Type'] = 'application/json; charset=UTF-8'
-          headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Auth-Token, Origin'  
+          headers['Content-Type'] = 'application/json; charset=UTF-8'  
         }
   
         const response = await fetch(url, {method, body, headers})

@@ -1,12 +1,14 @@
 
 .modal{
-   height: 340px;
+   position: absolute;
+   height: 380px;
    width: 700px;
    box-shadow: 0 0 3px;
    border-radius: 10px;
    padding:20px;  
    margin-left: calc( 50vw - 350px );
    font-size: 15px;
+   background: white;
 }
 
 .modal-head{
